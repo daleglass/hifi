@@ -27,4 +27,8 @@ function(LINK_HIFI_LIBRARIES)
 
   setup_memory_debugger()
 
+  if(CMAKE_THREAD_LIBS_INIT)
+    target_link_libraries(${TARGET_NAME} "${CMAKE_THREAD_LIBS_INIT}")
+  endif()
+
 endfunction()
